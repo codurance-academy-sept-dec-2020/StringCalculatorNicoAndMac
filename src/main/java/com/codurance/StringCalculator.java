@@ -1,13 +1,21 @@
 package com.codurance;
 
 
-public class StringCalculator {
+class StringCalculator {
 
-    public static Integer add(String numbers) {
-        if ("".equals(numbers)) {
+    StringCalculator() {}
+
+    static Integer add(String commaSeparatedNumbers) {
+        if (null == commaSeparatedNumbers || "".equals(commaSeparatedNumbers)) {
             return 0;
         }
 
-        return Integer.valueOf(numbers);
+        String[] numbers = commaSeparatedNumbers.split(",");
+        int sum = 0;
+        for (String number : numbers) {
+            sum += Integer.valueOf(number);
+        }
+        return sum;
+
     }
 }
