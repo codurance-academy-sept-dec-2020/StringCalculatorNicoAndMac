@@ -1,21 +1,19 @@
 package com.codurance;
 
+import java.util.Arrays;
 
 class StringCalculator {
 
     StringCalculator() {}
 
     static Integer add(String commaSeparatedNumbers) {
-        if (null == commaSeparatedNumbers || "".equals(commaSeparatedNumbers)) {
+        if (commaSeparatedNumbers.isEmpty()) {
             return 0;
         }
 
-        String[] numbers = commaSeparatedNumbers.split(",");
-        int sum = 0;
-        for (String number : numbers) {
-            sum += Integer.valueOf(number);
-        }
-        return sum;
-
+        return Arrays.asList(commaSeparatedNumbers.split(","))
+                .stream()
+                .mapToInt(i -> Integer.valueOf(i))
+                .sum();
     }
 }
