@@ -12,4 +12,10 @@ public class StringCalculatorShould {
         int sum = StringCalculator.add("");
         assertEquals(0, sum);
     }
+
+    @Test
+    public void return_numeric_value_of_a_single_number_as_a_string() {
+        int numericRepresentation = StringCalculator.add("1");
+        assertEquals(1, numericRepresentation);
+    }
 }

@@ -1,7 +1,13 @@
 package com.codurance;
 
+
 public class StringCalculator {
+
     public static Integer add(String numbers) {
-        return 0;
+        if ("".equals(numbers)) {
+            return 0;
+        }
+
+        return Integer.valueOf(numbers);
     }
 }
